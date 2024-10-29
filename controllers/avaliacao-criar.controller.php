@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] != "POST") {
 }
 
 $usuario_id = auth()->id;
-$livro_id = $_POST['livro_id'];
+$filme_id = $_POST['filme_id'];
 $avaliacao = $_POST['avaliacao'];
 $nota = $_POST['nota'];
 
@@ -17,17 +17,17 @@ $validacao = Validacao::validar([
 ], $_POST);
 
 if ($validacao->naoPassou()) {
-    header('location:  /livro?id=' . $livro_id);
+    header('location:  /filme?id=' . $filme_id);
     exit();
 }
 
 
 $database->query(query: "
-    insert into avaliacoes (usuario_id, livro_id, avaliacao, nota)
-    values (:usuario_id, :livro_id, :avaliacao, :nota);
-", params: compact('usuario_id', 'livro_id', 'avaliacao', 'nota'));
+    insert into avaliacoes (usuario_id, filme_id, avaliacao, nota)
+    values (:usuario_id, :filme_id, :avaliacao, :nota);
+", params: compact('usuario_id', 'filme_id', 'avaliacao', 'nota'));
 
 
-flash()->push('mensagem', 'AvaliacaÃ§Ã£o criada com sucesso!');
-header('location: /livro?id=' . $livro_id);
+flash()->push('mensagem', 'Avaliação criada com sucesso!');
+header('location: /filme?id=' . $filme_id);
 exit();

@@ -3,6 +3,6 @@
 
 $pesquisar = $_REQUEST['pesquisar'] ?? '';
 
-$livros = Livro::all($pesquisar);
+$filmes = Filme::all($pesquisar);
 
-view('index', compact('livros'));
+view('index', compact('filmes'));

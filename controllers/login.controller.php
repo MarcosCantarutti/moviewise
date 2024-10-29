@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($usuario) {
 
         if (!password_verify($password, $usuario->password)) {
-            flash()->push('validacoes_login', ['Usuario ou senha estÃ£o incorretos!']);
+            flash()->push('validacoes_login', ['Usuario ou senha estão incorretos!']);
             header('location: /login');
             exit();
         }

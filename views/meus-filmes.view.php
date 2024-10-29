@@ -1,16 +1,16 @@
-<h1 class="mt-6 font-bold text-lg">Meus Livros</h1>
+<h1 class="mt-6 font-bold text-lg">Meus filmes</h1>
 
 <div class="grid grid-cols-4 gap-4">
     <div class="col-span-3 flex flex-col gap-4">
-        <?php foreach ($livros as $livro) {
-            require 'partials/_livro.php';
+        <?php foreach ($filmes as $filme) {
+            require 'partials/_filme.php';
         } ?>
     </div>
 
     <div>
         <div class="border border-stone-700 rounded">
-            <h1 class="border-b border-stone-700 text-stone-400 font-bold px-4 py-2">Cadastre um novo livro!</h1>
-            <form class=" p-4 space-y-4" method="POST" action="/livro-criar" enctype="multipart/form-data">
+            <h1 class="border-b border-stone-700 text-stone-400 font-bold px-4 py-2">Cadastre um novo filme!</h1>
+            <form class=" p-4 space-y-4" method="POST" action="/filme-criar" enctype="multipart/form-data">
                 <?php if ($validacoes = flash()->get('validacoes')) : ?>
                     <div class="border-red-800 border-2 rounded-md bg-red-900 text-red-400 px-4 py-1">
                         <ul>
@@ -27,19 +27,19 @@
                     <input type="file" class="border-stone-800 border-2 rounded-md bg-stone-900 text-sm focus:outline-none px-2 py-1" name='imagem'>
                 </div>
                 <div class="flex flex-col">
-                    <label class="text-stone-400 mb-1" for="titulo">TÃ­tulo</label>
+                    <label class="text-stone-400 mb-1" for="titulo">Título</label>
                     <input type="text" class="border-stone-800 border-2 rounded-md bg-stone-900 text-sm focus:outline-none px-2 py-1" name="titulo" type="text" />
                 </div>
                 <div class="flex flex-col">
-                    <label class="text-stone-400 mb-1" for="autor">Autor</label>
-                    <input type="text" class="border-stone-800 border-2 rounded-md bg-stone-900 text-sm focus:outline-none px-2 py-1" name="autor" type="text" />
+                    <label class="text-stone-400 mb-1" for="diretor">Diretor</label>
+                    <input type="text" class="border-stone-800 border-2 rounded-md bg-stone-900 text-sm focus:outline-none px-2 py-1" name="diretor" type="text" />
                 </div>
                 <div class="flex flex-col">
-                    <label class="text-stone-400 mb-1" for="titulo">Descricao</label>
+                    <label class="text-stone-400 mb-1" for="titulo">Descrição</label>
                     <textarea type="text" class="border-stone-800 border-2 rounded-md bg-stone-900 text-sm focus:outline-none px-2 py-1" name="descricao" type="text"></textarea>
                 </div>
                 <div class="flex flex-col">
-                    <label class="text-stone-400 mb-1" for="ano_de_lancamento">Ano de lanÃ§amento</label>
+                    <label class="text-stone-400 mb-1" for="ano_de_lancamento">Ano de lançamento</label>
                     <input type="text" class="border-stone-800 border-2 rounded-md bg-stone-900 text-sm focus:outline-none px-2 py-1" name="ano_de_lancamento" type="text" />
                 </div>
 

@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] != "POST") {
-    header('location: /meus-livros');
+    header('location: /meus-filmes');
     exit();
 }
 
@@ -10,19 +10,19 @@ if (!auth()) {
 
 $usuario_id = auth()->id;
 $titulo = $_POST['titulo'];
-$autor = $_POST['autor'];
+$diretor = $_POST['diretor'];
 $descricao = $_POST['descricao'];
 $ano_de_lancamento = $_POST['ano_de_lancamento'];
 
 $validacao = Validacao::validar([
     'titulo' => ['required', 'min:3'],
-    'autor' => ['required'],
+    'diretor' => ['required'],
     'descricao' => ['required'],
     'ano_de_lancamento' => ['required'],
 ], $_POST);
 
 if ($validacao->naoPassou()) {
-    header('location:  /meus-livros');
+    header('location:  /meus-filmes');
     exit();
 }
 
@@ -35,11 +35,11 @@ move_uploaded_file($_FILES['imagem']['tmp_name'], __DIR__ . '/../public/' . $ima
 
 
 $database->query(query: "
-    insert into livros (titulo, autor, descricao, ano_de_lancamento, usuario_id, imagem)
-    values (:titulo, :autor, :descricao, :ano_de_lancamento, :usuario_id, :imagem);
-", params: compact('titulo', 'autor', 'descricao', 'ano_de_lancamento', 'usuario_id', 'imagem'));
+    insert into filmes (titulo, diretor, descricao, ano_de_lancamento, usuario_id, imagem)
+    values (:titulo, :diretor, :descricao, :ano_de_lancamento, :usuario_id, :imagem);
+", params: compact('titulo', 'diretor', 'descricao', 'ano_de_lancamento', 'usuario_id', 'imagem'));
 
 
-flash()->push('mensagem', 'Livro cadastrado com sucesso!');
-header('location:  /meus-livros');
+flash()->push('mensagem', 'Filme cadastrado com sucesso!');
+header('location:  /meus-filmes');
 exit();

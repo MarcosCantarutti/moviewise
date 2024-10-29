@@ -45,14 +45,14 @@ class Validacao
     private function email($campo, $valor)
     {
         if (!filter_var($valor, FILTER_VALIDATE_EMAIL)) {
-            $this->validacoes[] = "O $campo é INVÁLIDO.";
+            $this->validacoes[] = "O $campo não é válido.";
         }
     }
 
     private function confirmed($campo, $valor, $valor_confirmacao)
     {
         if ($valor != $valor_confirmacao) {
-            $this->validacoes[] = "O $campo de confirmação esta diferente";
+            $this->validacoes[] = "O $campo de confirmação está diferente";
         }
     }
 
@@ -72,8 +72,7 @@ class Validacao
 
     private function strong($campo, $valor)
     {
-        // Verifica se a senha contém letras maiúsculas, minúsculas, números e caracteres especiais
-        if (!preg_match('/[A-Z]/', $valor) || !preg_match('/[a-z]/', $valor) || !preg_match('/[0-9]/', $valor) || !preg_match('/[!@#$%¨&*()_]/', $valor)) {
+        if (!preg_match('/[A-Z]/', $valor) || !preg_match('/[a-z]/', $valor) || !preg_match('/[0-9]/', $valor) || !preg_match('/[!@#$%Â¨&*()_]/', $valor)) {
             $this->validacoes[] = "O campo $campo precisa ter pelo menos uma letra maiúscula, uma minúscula, um número e um caractere especial.";
         }
     }
@@ -108,7 +107,6 @@ class Validacao
             $validacao .= "_" . $formLocation;
         }
         flash()->push($validacao, $this->validacoes);
-        // $_SESSION['validacoes'] = $this->validacoes;
         return is_array($this->validacoes) && count($this->validacoes) > 0;
     }
 }

@@ -12,11 +12,11 @@
 
     <header class="bg-stone-900">
         <nav class="mx-auto max-w-screen-lg flex justify-between px-8 py-4">
-            <div class="font-bold text-xl tracking-wide">Book Wise</div>
+            <div class="font-bold text-xl tracking-wide">Movie Wise</div>
 
             <ul class="flex space-x-4 font-bold">
                 <li><a href="/" class="text-lime-500">Explorar</a></li>
-                <li><a href="/meus-livros" class="hover:underline">Meus Livros</a></li>
+                <li><a href="/meus-filmes" class="hover:underline">Meus filmes</a></li>
             </ul>
 
             <ul>
@@ -28,9 +28,9 @@
 
     <main class="mx-auto max-w-screen-lg space-y-6">
 
-        <!-- livro -->
-        <?= $livro->titulo; ?>
-        <?php require 'partials/_livro.php'; ?>
+        <!-- filme -->
+        <?= $filme->titulo; ?>
+        <?php require 'partials/_filme.php'; ?>
 
         <h2>Avaliações</h2>
         <div class="grid grid-cols-4 gap-4">
@@ -39,7 +39,7 @@
                     <div class="border border-stone-700 rounded p-2">
                         <?= $avaliacao->avaliacao; ?>
                         <?php
-                        echo str_repeat("★", $avaliacao->nota);
+                        echo str_repeat("?", $avaliacao->nota);
                         ?>
                     </div>
 
@@ -62,13 +62,13 @@
                                 </div>
                             <?php endif; ?>
                             <div class="flex flex-col">
-                                <label class="text-stone-400 mb-1" for="avaliacao">Avaliações</label>
+                                <label class="text-stone-400 mb-1" for="avaliacao">Avalia��es</label>
                                 <textarea type="text" class="border-stone-800 border-2 rounded-md bg-stone-900 text-sm focus:outline-none px-2 py-1" name="avaliacao" type="text"></textarea>
                             </div>
 
                             <div class="flex flex-col">
-                                <input type="hidden" name="livro_id"
-                                    value="<?= $livro->id; ?>" />
+                                <input type="hidden" name="filme_id"
+                                    value="<?= $filme->id; ?>" />
                                 <label class="text-stone-400 mb-1" for="password">Nota</label>
                                 <select class="border-stone-800 border-2 rounded-md bg-stone-900 text-sm focus:outline-none px-2 py-1" name="nota">
                                     <option value="1">1</option>
