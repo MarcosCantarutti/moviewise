@@ -27,7 +27,7 @@
                     <input type="file" class="border-stone-800 border-2 rounded-md bg-stone-900 text-sm focus:outline-none px-2 py-1" name='imagem'>
                 </div>
                 <div class="flex flex-col">
-                    <label class="text-stone-400 mb-1" for="titulo">Título</label>
+                    <label class="text-stone-400 mb-1" for="titulo">TÃ­tulo</label>
                     <input type="text" class="border-stone-800 border-2 rounded-md bg-stone-900 text-sm focus:outline-none px-2 py-1" name="titulo" type="text" />
                 </div>
                 <div class="flex flex-col">
@@ -35,11 +35,11 @@
                     <input type="text" class="border-stone-800 border-2 rounded-md bg-stone-900 text-sm focus:outline-none px-2 py-1" name="diretor" type="text" />
                 </div>
                 <div class="flex flex-col">
-                    <label class="text-stone-400 mb-1" for="titulo">Descrição</label>
+                    <label class="text-stone-400 mb-1" for="titulo">DescriÃ§Ã£o</label>
                     <textarea type="text" class="border-stone-800 border-2 rounded-md bg-stone-900 text-sm focus:outline-none px-2 py-1" name="descricao" type="text"></textarea>
                 </div>
                 <div class="flex flex-col">
-                    <label class="text-stone-400 mb-1" for="ano_de_lancamento">Ano de lançamento</label>
+                    <label class="text-stone-400 mb-1" for="ano_de_lancamento">Ano de lanÃ§amento</label>
                     <input type="text" class="border-stone-800 border-2 rounded-md bg-stone-900 text-sm focus:outline-none px-2 py-1" name="ano_de_lancamento" type="text" />
                 </div>
 

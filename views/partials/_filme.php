@@ -5,7 +5,7 @@
         <div class="space-y-1">
             <a href="/filme?id=<?= $filme->id; ?>" class="font-semibold hover:underline"> <?= $filme->titulo; ?></a>
             <div class="text-xs italic"> <?= $filme->diretor; ?></div>
-            <div class="text-xs italic"><?= $notaFinal = str_repeat('?', $filme->nota_avaliacoes); ?>(<?= $filme->count_avaliacoes; ?>)</div>
+            <div class="text-xs italic"><?= $notaFinal = str_repeat('★', $filme->nota_avaliacoes); ?>(<?= $filme->count_avaliacoes; ?>)</div>
         </div>
     </div>
 

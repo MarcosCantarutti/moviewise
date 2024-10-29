@@ -62,7 +62,7 @@
                                 </div>
                             <?php endif; ?>
                             <div class="flex flex-col">
-                                <label class="text-stone-400 mb-1" for="avaliacao">Avaliações</label>
+                                <label class="text-stone-400 mb-1" for="avaliacao">AvaliaÃ§Ãµes</label>
                                 <textarea type="text" class="border-stone-800 border-2 rounded-md bg-stone-900 text-sm focus:outline-none px-2 py-1" name="avaliacao" type="text"></textarea>
                             </div>
 
